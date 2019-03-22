@@ -26,4 +26,8 @@ app.post("/campgrounds", function(req, res){
     // redirect back to campgrounds page
 });
 
+app.get("/campgrounds/new", function(req, res){
+    res.render("new.ejs");
+});
+
 app.listen(port, () => console.log(`Yelp Camp Server is Connected on port: ${port}!`))
