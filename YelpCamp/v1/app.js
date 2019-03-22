@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+var bodyParser = require("body-parser");
 
 app.set("view engine", "ejs");
 
@@ -16,6 +17,12 @@ app.get("/campgrounds", function(req, res) {
     ]
 
     res.render("campgrounds", {campgrounds:campgrounds});
+});
+
+app.post("/campgrounds", function(req, res){
+    res.send("You Hit the Post Route");
+    // get data form form and add to campgrounds array
+    // redirect back to campgrounds page
 });
 
 app.listen(port, () => console.log(`Yelp Camp Server is Connected on port: ${port}!`))
