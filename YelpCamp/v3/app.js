@@ -3,7 +3,7 @@ const express    = require('express'),
       port       = 3000,
       bodyParser = require("body-parser"),
       mongoose   = require("mongoose"),
-      Campground = require("./models/campground"),
+      Campground = require("./models/campground");
       
 
 mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
