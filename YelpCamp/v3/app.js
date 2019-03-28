@@ -1,8 +1,10 @@
-const express = require('express')
-const app = express()
-const port = 3000
-var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
+const express    = require('express'),
+      app        = express(),
+      port       = 3000,
+      bodyParser = require("body-parser"),
+      mongoose   = require("mongoose"),
+      Campground = require("./models/campground"),
+      
 
 mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
