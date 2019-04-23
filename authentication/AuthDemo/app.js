@@ -27,6 +27,12 @@ app.use(passport.session());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+//==============
+//****ROUTES**** 
+//==============
+
+
+
 app.get("/", function(req, res){
     res.render("home");
 });
@@ -34,4 +40,11 @@ app.get("/", function(req, res){
 app.get("/secret", function(req, res){
     res.render("secret");
 });
+
+// AUTH ROUTES
+
+app.get("/register", function(req, res){
+    res.render("register");
+});
+
 app.listen(PORT, () => console.log(`AuthDemo is connected on port: ${PORT}!`))
