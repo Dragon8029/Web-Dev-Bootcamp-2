@@ -8,8 +8,18 @@ mongoose.connect("mongodb://localhost/auth_demo_app", { useNewUrlParser: true })
 
 const PORT = process.env.PORT || 3001;
 
+
+
 var app = express();
 app.set('view engine', 'ejs');
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(require("express-session")({
+    secret: "Rusty is the best and cutest dog in the world", 
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.get("/", function(req, res){
     res.render("home");
