@@ -79,4 +79,8 @@ app.post("/login",passport.authenticate("local",{
 
 });
 
+app.get("/logout", function(req, res){
+    req.logout();
+});
+
 app.listen(PORT, () => console.log(`AuthDemo is connected on port: ${PORT}!`))
